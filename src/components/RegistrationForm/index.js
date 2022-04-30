@@ -24,6 +24,8 @@ class RegistrationForm extends Component {
     if (firstName === '') {
       this.setState({firstNameRequired: true, firstNameBorder: 'inputEl2'})
       console.log('blurred')
+    } else {
+      this.setState({firstNameRequired: false, firstNameBorder: 'inputEl'})
     }
   }
 
@@ -32,8 +34,12 @@ class RegistrationForm extends Component {
     if (lastName === '') {
       this.setState({lastNameRequired: true, lastnameBorder: 'inputEl2'})
       console.log('blurred2')
+    } else {
+      this.setState({lastNameRequired: false, lastnameBorder: 'inputEl'})
     }
   }
+
+  totalPageRender = () => {}
 
   render() {
     const {
@@ -60,10 +66,11 @@ class RegistrationForm extends Component {
                 onChange={this.onFirstnameTyping}
                 value={firstName}
                 onBlur={this.onblurFirstName}
+                id="firstNameInput"
               />
               {firstNameRequired && <p className="reqText">Required</p>}
 
-              <label className="labelTextL" htmlFor="firstNameInput">
+              <label className="labelTextL" htmlFor="lastNameInput">
                 LAST NAME
               </label>
               <input
@@ -73,6 +80,7 @@ class RegistrationForm extends Component {
                 onChange={this.onLastnameTyping}
                 value={lastName}
                 onBlur={this.onblurLastName}
+                id="lastNameInput"
               />
               {lastNameRequired && <p className="reqText">Required</p>}
               <button className="submitButton" type="submit">
