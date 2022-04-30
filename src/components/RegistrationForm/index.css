@@ -84,3 +84,12 @@
   margin-bottom: 10px;
   font-weight: bold;
 }
+.imgSize {
+  width: 30%;
+}
+.successContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
